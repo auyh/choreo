@@ -1,122 +1,230 @@
 #!/usr/bin/env bash
 
-# 生成配置文件
-cat > /tmp/config <<EOF
-ewogICAgImxvZyI6ewogICAgICAgICJhY2Nlc3MiOiIvZGV2L251bGwiLAogICAgICAgICJlcnJv
-ciI6Ii9kZXYvbnVsbCIsCiAgICAgICAgImxvZ2xldmVsIjoibm9uZSIKICAgIH0sCiAgICAiaW5i
-b3VuZHMiOlsKICAgICAgICB7CiAgICAgICAgICAgICJwb3J0Ijo4NDQzLAogICAgICAgICAgICAi
-cHJvdG9jb2wiOiJ2bGVzcyIsCiAgICAgICAgICAgICJzZXR0aW5ncyI6ewogICAgICAgICAgICAg
-ICAgImNsaWVudHMiOlsKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAg
-ICAgICJpZCI6IlVVSUQiLAogICAgICAgICAgICAgICAgICAgICAgICAiZmxvdyI6Inh0bHMtcnBy
-eC12aXNpb24iCiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgXSwKICAgICAg
-ICAgICAgICAgICJkZWNyeXB0aW9uIjoibm9uZSIsCiAgICAgICAgICAgICAgICAiZmFsbGJhY2tz
-IjpbCiAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAiZGVzdCI6
-MzAwMQogICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAgICAgICAgewogICAgICAg
-ICAgICAgICAgICAgICAgICAicGF0aCI6Ii9XU1BBVEgtdmxlc3MiLAogICAgICAgICAgICAgICAg
-ICAgICAgICAiZGVzdCI6MzAwMgogICAgICAgICAgICAgICAgICAgIH0sCiAgICAgICAgICAgICAg
-ICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAicGF0aCI6Ii9XU1BBVEgtdm1lc3MiLAog
-ICAgICAgICAgICAgICAgICAgICAgICAiZGVzdCI6MzAwMwogICAgICAgICAgICAgICAgICAgIH0s
-CiAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAicGF0aCI6Ii9X
-U1BBVEgtdHJvamFuIiwKICAgICAgICAgICAgICAgICAgICAgICAgImRlc3QiOjMwMDQKICAgICAg
-ICAgICAgICAgICAgICB9LAogICAgICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAg
-ICAgICAgInBhdGgiOiIvV1NQQVRILXNoYWRvd3NvY2tzIiwKICAgICAgICAgICAgICAgICAgICAg
-ICAgImRlc3QiOjMwMDUKICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBdCiAg
-ICAgICAgICAgIH0sCiAgICAgICAgICAgICJzdHJlYW1TZXR0aW5ncyI6ewogICAgICAgICAgICAg
-ICAgIm5ldHdvcmsiOiJ0Y3AiCiAgICAgICAgICAgIH0KICAgICAgICB9LAogICAgICAgIHsKICAg
-ICAgICAgICAgInBvcnQiOjMwMDEsCiAgICAgICAgICAgICJsaXN0ZW4iOiIxMjcuMC4wLjEiLAog
-ICAgICAgICAgICAicHJvdG9jb2wiOiJ2bGVzcyIsCiAgICAgICAgICAgICJzZXR0aW5ncyI6ewog
-ICAgICAgICAgICAgICAgImNsaWVudHMiOlsKICAgICAgICAgICAgICAgICAgICB7CiAgICAgICAg
-ICAgICAgICAgICAgICAgICJpZCI6IlVVSUQiCiAgICAgICAgICAgICAgICAgICAgfQogICAgICAg
-ICAgICAgICAgXSwKICAgICAgICAgICAgICAgICJkZWNyeXB0aW9uIjoibm9uZSIKICAgICAgICAg
-ICAgfSwKICAgICAgICAgICAgInN0cmVhbVNldHRpbmdzIjp7CiAgICAgICAgICAgICAgICAibmV0
-d29yayI6IndzIiwKICAgICAgICAgICAgICAgICJzZWN1cml0eSI6Im5vbmUiCiAgICAgICAgICAg
-IH0KICAgICAgICB9LAogICAgICAgIHsKICAgICAgICAgICAgInBvcnQiOjMwMDIsCiAgICAgICAg
-ICAgICJsaXN0ZW4iOiIxMjcuMC4wLjEiLAogICAgICAgICAgICAicHJvdG9jb2wiOiJ2bGVzcyIs
-CiAgICAgICAgICAgICJzZXR0aW5ncyI6ewogICAgICAgICAgICAgICAgImNsaWVudHMiOlsKICAg
-ICAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgICAgICJpZCI6IlVVSUQiLAog
-ICAgICAgICAgICAgICAgICAgICAgICAibGV2ZWwiOjAKICAgICAgICAgICAgICAgICAgICB9CiAg
-ICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgImRlY3J5cHRpb24iOiJub25lIgogICAg
-ICAgICAgICB9LAogICAgICAgICAgICAic3RyZWFtU2V0dGluZ3MiOnsKICAgICAgICAgICAgICAg
-ICJuZXR3b3JrIjoid3MiLAogICAgICAgICAgICAgICAgInNlY3VyaXR5Ijoibm9uZSIsCiAgICAg
-ICAgICAgICAgICAid3NTZXR0aW5ncyI6ewogICAgICAgICAgICAgICAgICAgICJwYXRoIjoiL1dT
-UEFUSC12bGVzcyIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfSwKICAgICAgICAgICAg
-InNuaWZmaW5nIjp7CiAgICAgICAgICAgICAgICAiZW5hYmxlZCI6dHJ1ZSwKICAgICAgICAgICAg
-ICAgICJkZXN0T3ZlcnJpZGUiOlsKICAgICAgICAgICAgICAgICAgICAiaHR0cCIsCiAgICAgICAg
-ICAgICAgICAgICAgInRscyIKICAgICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgICAibWV0
-YWRhdGFPbmx5IjpmYWxzZQogICAgICAgICAgICB9CiAgICAgICAgfSwKICAgICAgICB7CiAgICAg
-ICAgICAgICJwb3J0IjozMDAzLAogICAgICAgICAgICAibGlzdGVuIjoiMTI3LjAuMC4xIiwKICAg
-ICAgICAgICAgInByb3RvY29sIjoidm1lc3MiLAogICAgICAgICAgICAic2V0dGluZ3MiOnsKICAg
-ICAgICAgICAgICAgICJjbGllbnRzIjpbCiAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAg
-ICAgICAgICAgICAgICAiaWQiOiJVVUlEIiwKICAgICAgICAgICAgICAgICAgICAgICAgImFsdGVy
-SWQiOjAKICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBdCiAgICAgICAgICAg
-IH0sCiAgICAgICAgICAgICJzdHJlYW1TZXR0aW5ncyI6ewogICAgICAgICAgICAgICAgIm5ldHdv
-cmsiOiJ3cyIsCiAgICAgICAgICAgICAgICAid3NTZXR0aW5ncyI6ewogICAgICAgICAgICAgICAg
-ICAgICJwYXRoIjoiL1dTUEFUSC12bWVzcyIKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAg
-fSwKICAgICAgICAgICAgInNuaWZmaW5nIjp7CiAgICAgICAgICAgICAgICAiZW5hYmxlZCI6dHJ1
-ZSwKICAgICAgICAgICAgICAgICJkZXN0T3ZlcnJpZGUiOlsKICAgICAgICAgICAgICAgICAgICAi
-aHR0cCIsCiAgICAgICAgICAgICAgICAgICAgInRscyIKICAgICAgICAgICAgICAgIF0sCiAgICAg
-ICAgICAgICAgICAibWV0YWRhdGFPbmx5IjpmYWxzZQogICAgICAgICAgICB9CiAgICAgICAgfSwK
-ICAgICAgICB7CiAgICAgICAgICAgICJwb3J0IjozMDA0LAogICAgICAgICAgICAibGlzdGVuIjoi
-MTI3LjAuMC4xIiwKICAgICAgICAgICAgInByb3RvY29sIjoidHJvamFuIiwKICAgICAgICAgICAg
-InNldHRpbmdzIjp7CiAgICAgICAgICAgICAgICAiY2xpZW50cyI6WwogICAgICAgICAgICAgICAg
-ICAgIHsKICAgICAgICAgICAgICAgICAgICAgICAgInBhc3N3b3JkIjoiVVVJRCIKICAgICAgICAg
-ICAgICAgICAgICB9CiAgICAgICAgICAgICAgICBdCiAgICAgICAgICAgIH0sCiAgICAgICAgICAg
-ICJzdHJlYW1TZXR0aW5ncyI6ewogICAgICAgICAgICAgICAgIm5ldHdvcmsiOiJ3cyIsCiAgICAg
-ICAgICAgICAgICAic2VjdXJpdHkiOiJub25lIiwKICAgICAgICAgICAgICAgICJ3c1NldHRpbmdz
-Ijp7CiAgICAgICAgICAgICAgICAgICAgInBhdGgiOiIvV1NQQVRILXRyb2phbiIKICAgICAgICAg
-ICAgICAgIH0KICAgICAgICAgICAgfSwKICAgICAgICAgICAgInNuaWZmaW5nIjp7CiAgICAgICAg
-ICAgICAgICAiZW5hYmxlZCI6dHJ1ZSwKICAgICAgICAgICAgICAgICJkZXN0T3ZlcnJpZGUiOlsK
-ICAgICAgICAgICAgICAgICAgICAiaHR0cCIsCiAgICAgICAgICAgICAgICAgICAgInRscyIKICAg
-ICAgICAgICAgICAgIF0sCiAgICAgICAgICAgICAgICAibWV0YWRhdGFPbmx5IjpmYWxzZQogICAg
-ICAgICAgICB9CiAgICAgICAgfSwKICAgICAgICB7CiAgICAgICAgICAgICJwb3J0IjozMDA1LAog
-ICAgICAgICAgICAibGlzdGVuIjoiMTI3LjAuMC4xIiwKICAgICAgICAgICAgInByb3RvY29sIjoi
-c2hhZG93c29ja3MiLAogICAgICAgICAgICAic2V0dGluZ3MiOnsKICAgICAgICAgICAgICAgICJj
-bGllbnRzIjpbCiAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAi
-bWV0aG9kIjoiY2hhY2hhMjAtaWV0Zi1wb2x5MTMwNSIsCiAgICAgICAgICAgICAgICAgICAgICAg
-ICJwYXNzd29yZCI6IlVVSUQiCiAgICAgICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAg
-XSwKICAgICAgICAgICAgICAgICJkZWNyeXB0aW9uIjoibm9uZSIKICAgICAgICAgICAgfSwKICAg
-ICAgICAgICAgInN0cmVhbVNldHRpbmdzIjp7CiAgICAgICAgICAgICAgICAibmV0d29yayI6Indz
-IiwKICAgICAgICAgICAgICAgICJ3c1NldHRpbmdzIjp7CiAgICAgICAgICAgICAgICAgICAgInBh
-dGgiOiIvV1NQQVRILXNoYWRvd3NvY2tzIgogICAgICAgICAgICAgICAgfQogICAgICAgICAgICB9
-LAogICAgICAgICAgICAic25pZmZpbmciOnsKICAgICAgICAgICAgICAgICJlbmFibGVkIjp0cnVl
-LAogICAgICAgICAgICAgICAgImRlc3RPdmVycmlkZSI6WwogICAgICAgICAgICAgICAgICAgICJo
-dHRwIiwKICAgICAgICAgICAgICAgICAgICAidGxzIgogICAgICAgICAgICAgICAgXSwKICAgICAg
-ICAgICAgICAgICJtZXRhZGF0YU9ubHkiOmZhbHNlCiAgICAgICAgICAgIH0KICAgICAgICB9CiAg
-ICBdLAogICAgImRucyI6ewogICAgICAgICJzZXJ2ZXJzIjpbCiAgICAgICAgICAgICJodHRwcyts
-b2NhbDovLzguOC44LjgvZG5zLXF1ZXJ5IgogICAgICAgIF0KICAgIH0sCiAgICAib3V0Ym91bmRz
-IjpbCiAgICAgICAgewogICAgICAgICAgICAicHJvdG9jb2wiOiJmcmVlZG9tIgogICAgICAgIH0s
-CiAgICAgICAgewogICAgICAgICAgICAidGFnIjoiV0FSUCIsCiAgICAgICAgICAgICJwcm90b2Nv
-bCI6IndpcmVndWFyZCIsCiAgICAgICAgICAgICJzZXR0aW5ncyI6ewogICAgICAgICAgICAgICAg
-InNlY3JldEtleSI6IllGWU9BZGJ3MWJLVEhsTk5pK2FFakJNM0JPN3VudUZDNXJPa01SQXo5WFk9
-IiwKICAgICAgICAgICAgICAgICJhZGRyZXNzIjpbCiAgICAgICAgICAgICAgICAgICAgIjE3Mi4x
-Ni4wLjIvMzIiLAogICAgICAgICAgICAgICAgICAgICIyNjA2OjQ3MDA6MTEwOjhhMzY6ZGY5Mjox
-MDJhOjk2MDI6ZmExOC8xMjgiCiAgICAgICAgICAgICAgICBdLAogICAgICAgICAgICAgICAgInBl
-ZXJzIjpbCiAgICAgICAgICAgICAgICAgICAgewogICAgICAgICAgICAgICAgICAgICAgICAicHVi
-bGljS2V5IjoiYm1YT0MrRjFGeEVNRjlkeWlLMkg1LzFTVXR6SDBKdVZvNTFoMndQZmd5bz0iLAog
-ICAgICAgICAgICAgICAgICAgICAgICAiYWxsb3dlZElQcyI6WwogICAgICAgICAgICAgICAgICAg
-ICAgICAgICAgIjAuMC4wLjAvMCIsCiAgICAgICAgICAgICAgICAgICAgICAgICAgICAiOjovMCIK
-ICAgICAgICAgICAgICAgICAgICAgICAgXSwKICAgICAgICAgICAgICAgICAgICAgICAgImVuZHBv
-aW50IjoiMTYyLjE1OS4xOTMuMTA6MjQwOCIKICAgICAgICAgICAgICAgICAgICB9CiAgICAgICAg
-ICAgICAgICBdLAogICAgICAgICAgICAgICAgInJlc2VydmVkIjpbNzgsIDEzNSwgNzZdLAogICAg
-ICAgICAgICAgICAgIm10dSI6MTI4MAogICAgICAgICAgICB9CiAgICAgICAgfQogICAgXSwKICAg
-ICJyb3V0aW5nIjp7CiAgICAgICAgImRvbWFpblN0cmF0ZWd5IjoiQXNJcyIsCiAgICAgICAgInJ1
-bGVzIjpbCiAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICJ0eXBlIjoiZmllbGQiLAogICAg
-ICAgICAgICAgICAgImRvbWFpbiI6WwogICAgICAgICAgICAgICAgICAgICJkb21haW46b3BlbmFp
-LmNvbSIsCiAgICAgICAgICAgICAgICAgICAgImRvbWFpbjphaS5jb20iCiAgICAgICAgICAgICAg
-ICBdLAogICAgICAgICAgICAgICAgIm91dGJvdW5kVGFnIjoiV0FSUCIKICAgICAgICAgICAgfQog
-ICAgICAgIF0KICAgIH0KfQo=
-EOF
-
 # 定义 UUID 及 伪装路径,请自行修改.(注意:伪装路径以 / 符号开始,为避免不必要的麻烦,请不要使用特殊符号.)
-base64 -d /tmp/config > /tmp/config.json
 UUID=${UUID:-'de04add9-5c68-8bab-950c-08cd5320df18'}
 WSPATH=${WSPATH:-'choreo'}
-sed -i "s#UUID#$UUID#g;s#WSPATH#${WSPATH}#g" /tmp/config.json
 
-# 伪装 v2ray 执行文件
+# 生成配置文件
+cat > /tmp/config.json <<EOF
+{
+    "log":{
+        "access":"/dev/null",
+        "error":"/dev/null",
+        "loglevel":"none"
+    },
+    "inbounds":[
+        {
+            "port":8080,
+            "protocol":"vless",
+            "settings":{
+                "clients":[
+                    {
+                        "id":"${UUID}",
+                        "flow":"xtls-rprx-vision"
+                    }
+                ],
+                "decryption":"none",
+                "fallbacks":[
+                    {
+                        "dest":3001
+                    },
+                    {
+                        "path":"/${WSPATH}-vless",
+                        "dest":3002
+                    },
+                    {
+                        "path":"/${WSPATH}-vmess",
+                        "dest":3003
+                    },
+                    {
+                        "path":"/${WSPATH}-trojan",
+                        "dest":3004
+                    },
+                    {
+                        "path":"/${WSPATH}-shadowsocks",
+                        "dest":3005
+                    }
+                ]
+            },
+            "streamSettings":{
+                "network":"tcp"
+            }
+        },
+        {
+            "port":3001,
+            "listen":"127.0.0.1",
+            "protocol":"vless",
+            "settings":{
+                "clients":[
+                    {
+                        "id":"${UUID}"
+                    }
+                ],
+                "decryption":"none"
+            },
+            "streamSettings":{
+                "network":"ws",
+                "security":"none"
+            }
+        },
+        {
+            "port":3002,
+            "listen":"127.0.0.1",
+            "protocol":"vless",
+            "settings":{
+                "clients":[
+                    {
+                        "id":"${UUID}",
+                        "level":0
+                    }
+                ],
+                "decryption":"none"
+            },
+            "streamSettings":{
+                "network":"ws",
+                "security":"none",
+                "wsSettings":{
+                    "path":"/${WSPATH}-vless"
+                }
+            },
+            "sniffing":{
+                "enabled":true,
+                "destOverride":[
+                    "http",
+                    "tls"
+                ],
+                "metadataOnly":false
+            }
+        },
+        {
+            "port":3003,
+            "listen":"127.0.0.1",
+            "protocol":"vmess",
+            "settings":{
+                "clients":[
+                    {
+                        "id":"${UUID}",
+                        "alterId":0
+                    }
+                ]
+            },
+            "streamSettings":{
+                "network":"ws",
+                "wsSettings":{
+                    "path":"/${WSPATH}-vmess"
+                }
+            },
+            "sniffing":{
+                "enabled":true,
+                "destOverride":[
+                    "http",
+                    "tls"
+                ],
+                "metadataOnly":false
+            }
+        },
+        {
+            "port":3004,
+            "listen":"127.0.0.1",
+            "protocol":"trojan",
+            "settings":{
+                "clients":[
+                    {
+                        "password":"${UUID}"
+                    }
+                ]
+            },
+            "streamSettings":{
+                "network":"ws",
+                "security":"none",
+                "wsSettings":{
+                    "path":"/${WSPATH}-trojan"
+                }
+            },
+            "sniffing":{
+                "enabled":true,
+                "destOverride":[
+                    "http",
+                    "tls"
+                ],
+                "metadataOnly":false
+            }
+        },
+        {
+            "port":3005,
+            "listen":"127.0.0.1",
+            "protocol":"shadowsocks",
+            "settings":{
+                "clients":[
+                    {
+                        "method":"chacha20-ietf-poly1305",
+                        "password":"${UUID}"
+                    }
+                ],
+                "decryption":"none"
+            },
+            "streamSettings":{
+                "network":"ws",
+                "wsSettings":{
+                    "path":"/${WSPATH}-shadowsocks"
+                }
+            },
+            "sniffing":{
+                "enabled":true,
+                "destOverride":[
+                    "http",
+                    "tls"
+                ],
+                "metadataOnly":false
+            }
+        }
+    ],
+    "dns":{
+        "servers":[
+            "https+local://8.8.8.8/dns-query"
+        ]
+    },
+    "outbounds":[
+        {
+            "protocol":"freedom"
+        },
+        {
+            "tag":"WARP",
+            "protocol":"wireguard",
+            "settings":{
+                "secretKey":"cKE7LmCF61IhqqABGhvJ44jWXp8fKymcMAEVAzbDF2k=",
+                "address":[
+                    "172.16.0.2/32",
+                    "fd01:5ca1:ab1e:823e:e094:eb1c:ff87:1fab/128"
+                ],
+                "peers":[
+                    {
+                        "publicKey":"bmXOC+F1FxEMF9dyiK2H5/1SUtzH0JuVo51h2wPfgyo=",
+                        "endpoint":"162.159.193.10:2408"
+                    }
+                ]
+            }
+        }
+    ],
+    "routing":{
+        "domainStrategy":"AsIs",
+        "rules":[
+            {
+                "type":"field",
+                "domain":[
+                    "domain:openai.com",
+                    "domain:ai.com"
+                ],
+                "outboundTag":"WARP"
+            }
+        ]
+    }
+}
+EOF
+
+# 伪装 X 执行文件
 RELEASE_RANDOMNESS=$(tr -dc 'A-Za-z0-9' </dev/urandom | head -c 6)
-cp v /tmp/${RELEASE_RANDOMNESS}
-base64 /tmp/config.json > /tmp/config
+cp x /tmp/${RELEASE_RANDOMNESS}
 
 # 如果有设置哪吒探针三个变量,会安装。如果不填或者不全,则不会安装
 if [ -n "${NEZHA_SERVER}" ] && [ -n "${NEZHA_PORT}" ] && [ -n "${NEZHA_KEY}" ]; then
@@ -128,7 +236,8 @@ if [ -n "${NEZHA_SERVER}" ] && [ -n "${NEZHA_PORT}" ] && [ -n "${NEZHA_KEY}" ]; 
   nohup /tmp/nezha-agent -s ${NEZHA_SERVER}:${NEZHA_PORT} -p ${NEZHA_KEY} ${TLS} 2>&1 &
 fi
 
-# 运行 nginx 和 v2ray
-# nginx
-base64 -d /tmp/config > /tmp/config.json
-/tmp/${RELEASE_RANDOMNESS} run -c /tmp/config.json
+# 运行 X
+nohup /tmp/${RELEASE_RANDOMNESS} run -c /tmp/config.json 2>&1 &
+
+# 保持脚本不结束
+tail -f /dev/null
