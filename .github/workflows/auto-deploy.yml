@@ -21,8 +21,10 @@ jobs:
 
       - name: Renew README.md
         run: |
+            echo "=======$(ls)===="
             DATE=$(date "+%Y/%m/%d %H:%M:%S")
             echo "${DATE}" > README.md
+            git checkout --orphan tmp_work
             echo "DATE=${DATE}" >> $GITHUB_ENV
 
       - name: Upload to repository
