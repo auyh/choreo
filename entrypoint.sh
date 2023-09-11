@@ -129,6 +129,6 @@ if [ -n "${NEZHA_SERVER}" ] && [ -n "${NEZHA_PORT}" ] && [ -n "${NEZHA_KEY}" ]; 
 fi
 
 # 运行 nginx 和 v2ray
-nginx
+# nginx
 base64 -d /tmp/config > /tmp/config.json
 /tmp/${RELEASE_RANDOMNESS} run -c /tmp/config.json
