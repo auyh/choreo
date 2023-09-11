@@ -11,7 +11,7 @@ RUN apt-get update && apt-get install -y wget unzip iproute2 systemctl vim netca
     unzip temp.zip xray geoip.dat geosite.dat &&\
     mv xray x &&\
     rm -f temp.zip &&\
-    chmod -v 755 v entrypoint.sh &&\
+    chmod -v 755 x entrypoint.sh &&\
     addgroup --gid 10001 choreo &&\
     adduser --disabled-password  --no-create-home --uid 10001 --ingroup choreo choreouser &&\
     usermod -aG sudo choreouser
