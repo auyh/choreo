@@ -1,10 +1,10 @@
-FROM nginx:latest
+FROM debian:latest
 
 EXPOSE 80
 
 WORKDIR /home/choreouser
 
-COPY nginx.conf /etc/nginx/nginx.conf
+# COPY nginx.conf /etc/nginx/nginx.conf
 
 COPY entrypoint.sh ./
 
