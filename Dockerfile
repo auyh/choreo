@@ -4,14 +4,12 @@ EXPOSE 80
 
 WORKDIR /home/choreouser
 
-# COPY nginx.conf /etc/nginx/nginx.conf
-
 COPY entrypoint.sh ./
 
 RUN apt-get update && apt-get install -y wget unzip iproute2 systemctl vim netcat-openbsd &&\
     wget -O temp.zip https://github.com/XTLS/Xray-core/releases/latest/download/Xray-linux-64.zip &&\
     unzip temp.zip xray geoip.dat geosite.dat &&\
-    mv xray v &&\
+    mv xray x &&\
     rm -f temp.zip &&\
     chmod -v 755 v entrypoint.sh &&\
     addgroup --gid 10001 choreo &&\
