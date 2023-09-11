@@ -14,7 +14,7 @@ cat > /tmp/config.json <<EOF
     },
     "inbounds":[
         {
-            "port":8080,
+            "port":8443,
             "protocol":"vless",
             "settings":{
                 "clients":[
